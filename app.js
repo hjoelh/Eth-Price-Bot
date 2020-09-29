@@ -9,28 +9,16 @@ client.once('ready', () => {
 
 client.login(process.env.TOKEN);
 
-
 async function getPrice() {
-
-    var raw = await fetch('https://api.coinbase.com/v2/prices/eth-usd/spot');
-    var json = await raw.json()
-    var eth = await json.data.amount
-    var ethStr = await eth.toString()
-  //  console.log(typeof ethStr)
-    // console.log(ethStr)
-           return ethStr
-          
+    let raw = await fetch('https://api.coinbase.com/v2/prices/eth-usd/spot');
+    let json = await raw.json()
+    let eth = await json.data.amount
+    let ethStr = await eth.toString()
+      return ethStr
 }
 
-const repeatFetch = setInterval(() => getPrice().then(ethPrice => {
-client.user.setActivity('$' + ethPrice, { type: 'WATCHING' })
-  .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
-  .catch(error => console.log(error));
+setInterval( () => getPrice().then(ethPrice => {
+  client.user.setActivity('$' + ethPrice, { type: 'WATCHING' })
+    .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
+    .catch(error => console.log(error));
 }), 40000)
-
-
-
-
-
-
-
