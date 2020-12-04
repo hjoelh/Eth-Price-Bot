@@ -1,9 +1,9 @@
 {
   "name": "eth-price-bot",
   "version": "1.5.0",
-  "main": "graphql.js",
+  "main": "discord.js",
   "scripts": {
-    "start": "node ./api/graphql.js"
+    "start": "node ./api/discord.js"
   },
   "dependencies": {
     "discord.js": "^12.2.0",
