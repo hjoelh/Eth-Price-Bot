@@ -1,12 +1,26 @@
 {
   "name": "eth-price-bot",
-  "version": "1.5.0",
-  "main": "discord.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "start": "node ./api/discord.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjoelh/discord-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hjoelh/discord-bot/issues"
+  },
+  "homepage": "https://github.com/hjoelh/discord-bot#readme",
   "dependencies": {
     "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
     "node-fetch": "^2.6.0"
   }
 }

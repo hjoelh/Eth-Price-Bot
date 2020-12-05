@@ -1,6 +1,6 @@
-**[Status](https://statuspage.freshping.io/49143-ethbot)**  
+Invite the bot to your server >
+https://discord.com/oauth2/authorize?client_id=736610809597264032&permissions=0&scope=bot
 
-## [Site](https://eth-price-discord-bot.vercel.app)  
+![](https://i.imgur.com/u4Hw3Cq.png)
 
-Made with **[discord.js](https://github.com/discordjs/discord.js/)** + vercel functions
 
