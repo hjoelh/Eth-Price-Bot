@@ -18,4 +18,4 @@ async function main() {
     .catch(err => console.log(err));
 };
 
-setInterval(main(), 30000);
+setInterval(() => main(), 30000);
