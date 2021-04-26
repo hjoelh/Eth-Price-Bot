@@ -1,18 +1,15 @@
 import { FaDiscord, FaEthereum } from "react-icons/fa";
 import HeadMeta from "../components/head.js";
-import Particle from "../components/particles.js";
-
-
-
+import Particles from "../components/particles.js";
 
 export default function Home() {
   return (
     <>
       <HeadMeta />
-      <Particle />
+      <Particles />
       <div className="main">
         <h1> Eth <span> <FaEthereum/></span>  price bot </h1>
-        <img className="image" src="/main.png" alt="E" />
+        <img className="image" src="/main.png" alt="Eth Price Bot" />
 
         <div className="buttonDiv">
           <button className="button1" type="button">
