@@ -1,14 +1,15 @@
-import { useEffect, useState, useRef } from "react";
-import { createGlobalStyle, keyframes } from "styled-components";
+import { useState } from "react";
 import styled from "styled-components";
-import { FaDiscord, FaEthereum } from "react-icons/fa";
+import { createGlobalStyle, keyframes } from "styled-components";
+import { FaDiscord } from "react-icons/fa";
 
+import useInterval from "../components/useInterval";
 import HeadMeta from "../components/head.js";
 import DiscordBot from "../components/discordbot";
 import Github from "../components/github";
 
 export default function Home() {
-  const [price, setPrice] = useState("......");
+  const [price, setPrice] = useState("...");
 
   async function getPrice() {
     const raw = await fetch("https://api.coinbase.com/v2/prices/eth-usd/spot");
@@ -48,26 +49,6 @@ export default function Home() {
     </>
   );
 }
-
-function useInterval(callback, delay) {
-  const savedCallback = useRef();
-
-  useEffect(() => {
-    savedCallback.current = callback;
-  });
-
-  useEffect(() => {
-    function tick() {
-      savedCallback.current();
-    }
-
-    callback();
-
-    let foo = setInterval(tick, delay);
-    return () => clearInterval(foo);
-  }, []);
-}
-//https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 
 // styles ---------------------------------------
 
