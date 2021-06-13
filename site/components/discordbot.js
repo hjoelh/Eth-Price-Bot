@@ -5,7 +5,7 @@ export default function DiscordBot({ verified, image, name, subText, size }) {
     <>
       <Wrap size={size}>
         <LogoWrap>
-          <Logo src={image} />
+          <Logo src={image} alt="Eth Bot" />
           <Online />
         </LogoWrap>
 
