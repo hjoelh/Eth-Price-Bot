@@ -1,9 +1,16 @@
 import styled from "styled-components";
 
-export default function DiscordBot({ verified, image, name, subText, size }) {
+export default function DiscordBot({
+  verified,
+  image,
+  name,
+  subText,
+  size,
+  style,
+}) {
   return (
     <>
-      <Wrap size={size}>
+      <Wrap size={size} style={style}>
         <LogoWrap>
           <Logo src={image} />
           <Online />
@@ -35,7 +42,6 @@ export default function DiscordBot({ verified, image, name, subText, size }) {
 const Wrap = styled.div`
   background: #2e3136;
   width: ${({ size }) => `calc(208px * ${size})`};
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   font-size: ${({ size }) => `calc(10px * ${size})`};
   font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 4.2em;
@@ -56,6 +62,7 @@ const TopText = styled.div`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  max-width: 14em;
 `;
 
 const Text = styled.p`
@@ -80,13 +87,14 @@ const SubText = styled.p`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  max-width: 12em;
 `;
 
 const Logo = styled.img`
   border-radius: 50%;
   width: 3.2em;
   height: 3.2em;
-  object-fit: contain;
+  object-fit: cover;
 `;
 
 const Online = styled.div`

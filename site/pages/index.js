@@ -30,8 +30,9 @@ export default function Home() {
             image="https://cdn.discordapp.com/avatars/736610809597264032/5cd342758a4d1d9547d0e545123309a5.png?size=256"
             name="ETH Bot"
             subText={`Watching $${price}`}
-            verified
             size={1.8}
+            style={{ boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px" }}
+            verified
           />
 
           <Button>
