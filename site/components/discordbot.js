@@ -32,7 +32,7 @@ export default function DiscordBot({ verified, image, name, subText, size }) {
   );
 }
 
-const Wrap = styled.div`
+const Wrap = styled.header`
   background: #2e3136;
   width: ${({ size }) => `calc(208px * ${size})`};
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
