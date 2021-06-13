@@ -6,6 +6,8 @@ class MyDocument extends Document {
     return { ...initialProps };
   }
 
+  // all this just to set the html lang
+
   render() {
     return (
       <Html lang="en">
@@ -20,3 +22,5 @@ class MyDocument extends Document {
 }
 
 export default MyDocument;
+
+
