@@ -125,9 +125,7 @@ const Button = styled.button`
   border: none;
   font-size: 1rem;
   font-weight: 900;
-  transition: 1s;
   background-image: linear-gradient(to bottom, #7289da 0%, #2e3136 15%);
-  background-size: 175% auto;
   cursor: pointer;
   &:focus {
     outline: none;
