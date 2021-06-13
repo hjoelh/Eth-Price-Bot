@@ -88,6 +88,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  padding: 0 25px;
   padding-top: 25%;
 `;
 
