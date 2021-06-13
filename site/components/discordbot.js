@@ -12,7 +12,7 @@ export default function DiscordBot({
     <>
       <Wrap size={size} style={style}>
         <LogoWrap>
-          <Logo src={image} />
+          <Logo src={image} alt="Eth Bot" />
           <Online />
         </LogoWrap>
 
