@@ -60,8 +60,14 @@ const GlobalStyle = createGlobalStyle`
   margin: 0px;
   font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  height: 100vh;
+}
 `;
+
 // ------------------------------------------------
 
 const Container = styled.header`
@@ -71,7 +77,6 @@ const Container = styled.header`
   justify-content: center;
   margin: 0 auto;
   padding: 0 25px;
-  padding-top: 25%;
 `;
 
 const spin = keyframes`
