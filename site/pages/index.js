@@ -60,11 +60,11 @@ const GlobalStyle = createGlobalStyle`
   margin: 0px;
   font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-body {
+#__next {
   display: flex;
   align-items: center;
   justify-content: center; 
-  height: 100vh;
+  min-height: 100vh;
 }
 `;
 
@@ -76,7 +76,6 @@ const Container = styled.header`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  padding: 0 25px;
 `;
 
 const spin = keyframes`
