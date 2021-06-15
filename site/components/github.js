@@ -3,7 +3,7 @@ import { VscGithub } from "react-icons/vsc";
 export default function Github() {
   return (
     <a
-      rel="noopener"
+      rel="noreferrer"
       className="github"
       href="https://github.com/hjoelh/Eth-Price-Bot"
       target="_blank"

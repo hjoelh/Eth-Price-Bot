@@ -16,6 +16,7 @@ export default function useInterval(callback, delay) {
 
     let foo = setInterval(tick, delay);
     return () => clearInterval(foo);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 }
 
