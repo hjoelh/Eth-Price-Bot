@@ -42,5 +42,4 @@ export default class MyDocument extends Document {
     );
   }
 }
-
 //https://nextjs.org/docs/advanced-features/custom-document
