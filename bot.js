@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 import Discord from "discord.js";
 
-const client = new Discord.Client();
+const client = new Discord.Client({ shardCount: "auto" });
 
 client.login(process.env.TOKEN);
 
