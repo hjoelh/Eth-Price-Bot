@@ -2,10 +2,10 @@
   "name": "eth-price-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "bot.js",
+  "main": "build/bot.js",
   "type": "module",
   "scripts": {
-    "start": "node ./bot.js",
+    "start": "node ./build/bot.js",
     "build": "tsc",
     "postinstall": "npm run build"
   },
