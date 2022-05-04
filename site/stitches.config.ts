@@ -1,4 +1,11 @@
-import { createStitches, globalCss } from "@stitches/react";
+import { createStitches } from "@stitches/react";
+
+export const { styled, getCssText, theme, globalCss } = createStitches({
+  theme: {
+    transitions: { 1: "all 0.33s" },
+    shadows: { 1: "rgba(0, 0, 0, 0.35) 0px 5px 15px" },
+  },
+});
 
 export const globalStyles = globalCss({
   "*": {
@@ -12,12 +19,5 @@ export const globalStyles = globalCss({
     alignItems: "center",
     justifyContent: "center",
     minHeight: "100vh",
-  },
-});
-
-export const { styled, getCssText, theme } = createStitches({
-  theme: {
-    transitions: { 1: "all 0.33s" },
-    shadows: { 1: "rgba(0, 0, 0, 0.35) 0px 5px 15px" },
   },
 });
