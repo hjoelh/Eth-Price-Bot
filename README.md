@@ -1,3 +1,4 @@
+[![Tests](https://github.com/hjoelh/Eth-Price-Bot/actions/workflows/tests.yml/badge.svg)](https://github.com/hjoelh/Eth-Price-Bot/actions/workflows/tests.yml)
 
 Invite to your server ---> [💰](https://discord.com/oauth2/authorize?client_id=736610809597264032&permissions=0&scope=bot)
 
