@@ -7,9 +7,7 @@ test("bot displays correct text props", () => {
     screen.getByText(status);
   };
 
-  const { rerender, debug } = render(
-    <DiscordBot name={name} status={status} />
-  );
+  const { rerender } = render(<DiscordBot name={name} status={status} />);
   confirmTextDisplays();
 
   rerender(<DiscordBot name={name} status={status} />);
