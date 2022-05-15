@@ -20,5 +20,7 @@ jobs:
         with:
           node-version: 14
           cache: "yarn"
-      - run: cd site && yarn install --immutable
+      - run: yarn install --immutable
+        working-directory: ./site
       - run: yarn test:ci
+        working-directory: ./site
