@@ -1,13 +1,13 @@
 import fetch from "node-fetch";
 import Discord from "discord.js";
 import { ActivityTypes } from "discord.js/typings/enums";
+import "dotenv/config";
 
 const client = new Discord.Client({
   shards: "auto",
   intents: [Discord.Intents.FLAGS.GUILDS],
 });
 
-client.login(process.env.TOKEN);
 console.log("Found Token - ", !!process.env.TOKEN);
 
 async function getPrice() {
@@ -17,6 +17,9 @@ async function getPrice() {
 }
 
 async function main() {
+  console.log("Attempting Login");
+  await client.login(process.env.TOKEN);
+  console.log("Logged in.");
   if (client.user) {
     const ClientPresence = client.user.setActivity(`$${await getPrice()}`, {
       type: ActivityTypes.WATCHING,
@@ -24,7 +27,7 @@ async function main() {
 
     console.log(`Activity set to ${ClientPresence.activities[0].name}`);
   } else {
-    console.log("Not logged in", { client });
+    console.log("Not logged in", { user: client.user });
   }
 }
 
