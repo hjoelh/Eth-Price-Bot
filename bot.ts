@@ -23,7 +23,7 @@ async function main() {
   console.log(`Activity set to ${ClientPresence.activities[0].name}`);
 }
 
-setInterval(() => main(), 30000);
+main();
 
 type Response = {
   data: { base: "ETH"; currency: "USD"; amount: string };
