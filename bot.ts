@@ -16,23 +16,31 @@ async function getPrice() {
   return data.amount;
 }
 
-async function main() {
+async function login() {
   console.log("Attempting Login");
-  await client.login(process.env.TOKEN);
-  console.log("Logged in.");
-  if (client.user) {
-    const ClientPresence = client.user.setActivity(`$${await getPrice()}`, {
-      type: ActivityTypes.WATCHING,
-    });
+  client.login(process.env.TOKEN).then(() => "Logged in.");
+}
 
-    console.log(`Activity set to ${ClientPresence.activities[0].name}`);
-  } else {
-    console.log("Not logged in", { user: client.user });
+async function setBotActivity() {
+  const ClientPresence = client.user!.setActivity(`$${await getPrice()}`, {
+    type: ActivityTypes.WATCHING,
+  });
+
+  console.log(`Activity set to ${ClientPresence.activities[0].name}`);
+}
+
+async function main() {
+  try {
+    await login();
+    setInterval(setBotActivity, 30000);
+  } catch (e) {
+    console.log(e);
   }
-  process.exit();
 }
 
 main();
+
+//--
 
 type Response = {
   data: { base: "ETH"; currency: "USD"; amount: string };
