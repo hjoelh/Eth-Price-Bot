@@ -16,11 +16,15 @@ async function getPrice() {
 }
 
 async function main() {
-  const ClientPresence = client.user!.setActivity(`$${await getPrice()}`, {
-    type: ActivityTypes.WATCHING,
-  });
+  if (client.user) {
+    const ClientPresence = client.user!.setActivity(`$${await getPrice()}`, {
+      type: ActivityTypes.WATCHING,
+    });
 
-  console.log(`Activity set to ${ClientPresence.activities[0].name}`);
+    console.log(`Activity set to ${ClientPresence.activities[0].name}`);
+  } else {
+    console.log("Not logged in", { client });
+  }
 }
 
 main();
