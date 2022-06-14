@@ -16,10 +16,11 @@ async function getPrice() {
 }
 
 async function main() {
-  client.user!.setActivity(`$${await getPrice()}`, {
+  const ClientPresence = client.user!.setActivity(`$${await getPrice()}`, {
     type: ActivityTypes.WATCHING,
   });
-  console.log(`Activity set to ${await getPrice()}`);
+
+  console.log(`Activity set to ${ClientPresence.activities[0].name}`);
 }
 
 setInterval(() => main(), 30000);
