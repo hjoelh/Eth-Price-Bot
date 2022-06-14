@@ -8,6 +8,7 @@ const client = new Discord.Client({
 });
 
 client.login(process.env.TOKEN);
+console.log("Found Token - ", !!process.env.TOKEN);
 
 async function getPrice() {
   const raw = await fetch("https://api.coinbase.com/v2/prices/eth-usd/spot");
@@ -17,7 +18,7 @@ async function getPrice() {
 
 async function main() {
   if (client.user) {
-    const ClientPresence = client.user!.setActivity(`$${await getPrice()}`, {
+    const ClientPresence = client.user.setActivity(`$${await getPrice()}`, {
       type: ActivityTypes.WATCHING,
     });
 
