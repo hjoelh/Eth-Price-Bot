@@ -5,7 +5,7 @@
   "main": "build/bot.js",
   "type": "module",
   "scripts": {
-    "start": "node ./build/bot.js",
+    "start": "node --optimize_for_size --max_old_space_size=460 ./build/bot.js",
     "build": "tsc",
     "postinstall": "npm run build"
   },
