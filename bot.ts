@@ -29,6 +29,7 @@ async function main() {
   } else {
     console.log("Not logged in", { user: client.user });
   }
+  process.exit();
 }
 
 main();
