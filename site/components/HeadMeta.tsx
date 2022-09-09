@@ -10,7 +10,7 @@ export default function HeadMeta(){
 
       <meta property="og:type" content="website"/>
       <meta property="og:url" content="https://eth-price-discord-bot.vercel.app"/>
-      <meta property="og:title" content="Lofi Radio Desktop"/>
+      <meta property="og:title" content="Eth Price Discord Bot"/>
       <meta property="og:description" content="Ethereum Price Bot for Discord"/>
       <meta property="og:image" content="https://i.imgur.com/DF2mVL0.jpg"/>
 
