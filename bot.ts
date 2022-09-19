@@ -11,9 +11,13 @@ const client = new Discord.Client({
 console.log("Found Token - ", !!process.env.TOKEN);
 
 async function getPrice() {
-  const raw = await fetch("https://api.coinbase.com/v2/prices/eth-usd/spot");
-  const { data } = (await raw.json()) as Response;
-  return data.amount;
+  try {
+    const raw = await fetch("https://api.coinbase.com/v2/prices/eth-usd/spot");
+    const { data } = (await raw.json()) as Response;
+    return data.amount;
+  } catch (e) {
+    console.error("Failed to fetch", e);
+  }
 }
 
 async function login() {
@@ -22,7 +26,10 @@ async function login() {
 }
 
 async function setBotActivity() {
-  const ClientPresence = client.user!.setActivity(`$${await getPrice()}`, {
+  const price = await getPrice();
+  if (!price) return;
+
+  const ClientPresence = client.user!.setActivity(`$${price}`, {
     type: ActivityTypes.WATCHING,
   });
 
