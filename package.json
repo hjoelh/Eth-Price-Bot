@@ -5,9 +5,10 @@
   "main": "build/bot.js",
   "type": "module",
   "scripts": {
-    "start": "node ./build/bot.js",
+    "start": "tsc && node ./build/bot.js",
     "build": "tsc",
-    "prebuild": "yarn"
+    "prebuild": "yarn",
+    "getEnvVars": "vercel env pull"
   },
   "dependencies": {
     "discord.js": "13.8.0",
@@ -19,6 +20,6 @@
     "@types/node": "^18.7.18"
   },
   "engines": {
-    "node": "16"
+    "node": "18.x"
   }
 }

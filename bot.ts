@@ -14,7 +14,7 @@ async function getPrice() {
   try {
     const raw = await fetch("https://api.coinbase.com/v2/prices/eth-usd/spot");
     const { data } = (await raw.json()) as Response;
-    return data.amount;
+    return Math.floor(+data.amount)
   } catch (e) {
     console.error("Failed to fetch", e);
   }
@@ -39,7 +39,7 @@ async function setBotActivity() {
 async function main() {
   try {
     await login();
-    setInterval(setBotActivity, 30000);
+    setInterval(setBotActivity, 1000 * 30);
   } catch (e) {
     console.log(e);
   }
