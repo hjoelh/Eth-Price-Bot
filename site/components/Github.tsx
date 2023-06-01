@@ -1,5 +1,5 @@
-import { styled } from "@stitches/react";
 import { VscGithub } from "react-icons/vsc";
+import { styled } from "../stitches.config";
 
 export default function Github() {
   return (
