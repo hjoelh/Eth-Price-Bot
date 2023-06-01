@@ -1,6 +1,0 @@
-services:
-  - type: worker
-    name: discord-bot
-    autoDeploy: false
-    environment: node
-    startCommand: pnpm run start
