@@ -8,8 +8,10 @@ export default function useGetEthPrice() {
       const raw = await fetch(
         "https://api.coinbase.com/v2/prices/eth-usd/spot"
       );
-      const { data } = await raw.json();
-      setPrice(data.amount);
+
+      const { data } = (await raw.json()) as Response;
+      const rounded = Math.floor(+data.amount);
+      setPrice(rounded.toString());
     }
 
     getPrice(); // initial call
@@ -20,3 +22,7 @@ export default function useGetEthPrice() {
 
   return { price };
 }
+
+type Response = {
+  data: { base: "ETH"; currency: "USD"; amount: string };
+};

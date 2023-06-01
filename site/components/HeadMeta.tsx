@@ -4,7 +4,6 @@ export default function HeadMeta(){
   return (
   <Head>
       <title>Eth Price Discord Bot</title>
-      <script async src="https://cdn.splitbee.io/sb.js"></script>
       <meta name="google-site-verification" content="0L-OGw7wusEygK1F_ra_origg8lgYJsgfezVrpvljJw" />
       <meta name="title" content="Eth Price Discord Bot" />
       <meta name="description" content="Ethereum Price Bot for Discord"/>

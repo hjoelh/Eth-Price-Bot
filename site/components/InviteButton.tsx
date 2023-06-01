@@ -3,15 +3,37 @@ import { FaDiscord } from "react-icons/fa";
 
 export default function InviteButton() {
   return (
-    <Button>
-      <Link href="http://bit.ly/ethbotdiscord">Invite to your server</Link>
+    <RelativeDiv style={{ position: "relative" }}>
+      <InstallsTxt>4000+ installs</InstallsTxt>
 
-      <IconWrap>
-        <FaDiscord />
-      </IconWrap>
-    </Button>
+      <Button>
+        <Link href="http://bit.ly/ethbotdiscord">Invite to your server</Link>
+
+        <IconWrap>
+          <FaDiscord />
+        </IconWrap>
+      </Button>
+    </RelativeDiv>
   );
 }
+
+const RelativeDiv = styled("div", {
+  position: "relative",
+});
+
+const InstallsTxt = styled("p", {
+  position: "absolute",
+  top: -5,
+  fontSize: "0.8em",
+  background: "#7289da",
+  borderRadius: "0.3em",
+  padding: 4,
+  left: -20,
+  transform: "rotate(-10deg)",
+  boxShadow: "$1",
+  zIndex: 1,
+  color: "white",
+});
 
 const Button = styled("button", {
   display: "flex",
@@ -29,9 +51,8 @@ const Button = styled("button", {
   transition: "$1",
   position: "relative",
 
-  cursor: "pointer",
   "&:hover": {
-    filter: "brightness(50%)",
+    boxShadow: "$2",
   },
 });
 

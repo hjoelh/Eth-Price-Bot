@@ -1,28 +1,35 @@
-import fetch from "node-fetch";
 import Discord from "discord.js";
-import { ActivityTypes } from "discord.js/typings/enums";
 import "dotenv/config";
+import ms from "ms";
+
+const log = console.log;
+const error = console.error;
 
 const client = new Discord.Client({
   shards: "auto",
-  intents: [Discord.Intents.FLAGS.GUILDS],
+  intents: [Discord.GatewayIntentBits.Guilds],
 });
 
-console.log("Found Token - ", !!process.env.TOKEN);
+log(process.env.TOKEN ? "✅ Found TOKEN Env var" : "❌ Missing TOKEN Env var");
+
+async function login() {
+  log("Attempting login...");
+  try {
+    await client.login(process.env.TOKEN);
+    log("🤖 Logged in");
+  } catch (e) {
+    log("🫤 Failed to login, error:", e);
+  }
+}
 
 async function getPrice() {
   try {
     const raw = await fetch("https://api.coinbase.com/v2/prices/eth-usd/spot");
     const { data } = (await raw.json()) as Response;
-    return Math.floor(+data.amount)
+    return Math.floor(+data.amount);
   } catch (e) {
-    console.error("Failed to fetch", e);
+    error("Failed to fetch from coinbase api, error:", e);
   }
-}
-
-async function login() {
-  console.log("Attempting Login");
-  client.login(process.env.TOKEN).then(() => "Logged in.");
 }
 
 async function setBotActivity() {
@@ -30,22 +37,16 @@ async function setBotActivity() {
   if (!price) return;
 
   const ClientPresence = client.user!.setActivity(`$${price}`, {
-    type: ActivityTypes.WATCHING,
+    type: Discord.ActivityType.Watching,
   });
 
-  console.log(`Activity set to ${ClientPresence.activities[0].name}`);
+  log(`Activity set to ${ClientPresence.activities[0].name}`);
 }
 
-async function main() {
-  try {
-    await login();
-    setInterval(setBotActivity, 1000 * 30);
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-main();
+(async function main() {
+  await login();
+  setInterval(setBotActivity, ms("30 sec"));
+})();
 
 //--
 
