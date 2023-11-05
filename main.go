@@ -16,7 +16,7 @@ import (
 )
 
 const endpoint = "https://api.coinbase.com/v2/prices/eth-usd/spot"
-const shards = 4
+const shards = 6
 
 func worker(id int, token string) {
 	discord, err := discordgo.New("Bot " + token)
